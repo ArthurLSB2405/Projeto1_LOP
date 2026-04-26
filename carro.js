@@ -22,13 +22,13 @@ carroceria.scale.set(2, 1, car_tam);
 //Parte de cima do carro
 const carroceria1 = new THREE.Mesh(formato, material);
 carroceria1.position.y = 0.75;
-carroceria1.scale.set(2, 0.75, 0.5);
+carroceria1.scale.set(2, 1, 1);
 
 //Formatação dos Pneus
 
 var pos_y = -0.5;
 
-const forma_pneu = new THREE.CylinderGeometry(0.4, 0.4, 0.3, 128);
+const forma_pneu = new THREE.CylinderGeometry(0.35, 0.35, 0.3, 128);
 const mat_pneu = new THREE.MeshBasicMaterial({ color: 0x757575 });
 function criarPneu(x, z) {
   const pneu = new THREE.Mesh(forma_pneu, mat_pneu);
@@ -133,8 +133,8 @@ document.addEventListener("keyup", (event) => {
 });
 
 
-const speed = 1;
-const offset = new THREE.Vector3(0, 4, 8);
+const speed = 0.5;
+const offset = new THREE.Vector3(0, 2, 8);
 function animate() {
   requestAnimationFrame(animate);
 
@@ -151,9 +151,6 @@ function animate() {
 
   renderer.render(scene, camera);
 }
-camera.position.z = 5;
-camera.position.y = 4;
-camera.rotation.x = -(Math.PI/6);
 
 
 
